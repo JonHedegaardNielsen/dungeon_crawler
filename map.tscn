@@ -1,13 +1,19 @@
 [gd_scene format=3 uid="uid://vsshkkfijkq3"]
 
-[ext_resource type="MeshLibrary" path="res://mesh.meshlib" id="1_c7s6e"]
-[ext_resource type="MeshLibrary" path="res://mini_dungeon_wall_mesh_lib.meshlib" id="2_wijl4"]
-[ext_resource type="PackedScene" uid="uid://dcd6splq1tcgw" path="res://coin.tscn" id="3_e0an3"]
+[ext_resource type="MeshLibrary" uid="uid://cteqbgjahaomx" path="res://mesh_libs/mesh.meshlib" id="1_e0an3"]
+[ext_resource type="Script" uid="uid://din6cyixqwr4u" path="res://map.gd" id="1_urblq"]
+[ext_resource type="MeshLibrary" uid="uid://cujt1eai5cf8g" path="res://mesh_libs/mini_dungeon_wall_mesh_lib.meshlib" id="2_p5pve"]
+[ext_resource type="PackedScene" uid="uid://cd4n6p0kgvcyj" path="res://coin/coin.tscn" id="2_urblq"]
+[ext_resource type="PackedScene" uid="uid://b1bjcpdfcew3j" path="res://chest/chest.tscn" id="4_p5pve"]
 
-[node name="Room1" type="Node3D" unique_id=1172338637]
+[node name="Map" type="Node3D" unique_id=1172338637]
+script = ExtResource("1_urblq")
+
+[node name="Coin" parent="." unique_id=29428285 instance=ExtResource("2_urblq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 
 [node name="Ground" type="GridMap" parent="." unique_id=986936840]
-mesh_library = ExtResource("1_c7s6e")
+mesh_library = ExtResource("1_e0an3")
 cell_size = Vector3(1, 2, 1)
 cell_center_y = false
 data = {
@@ -15,7 +21,7 @@ data = {
 }
 
 [node name="Walls" type="GridMap" parent="." unique_id=1304512250]
-mesh_library = ExtResource("2_wijl4")
+mesh_library = ExtResource("2_p5pve")
 cell_size = Vector3(1, 2, 1)
 cell_center_y = false
 collision_layer = 4
@@ -29,5 +35,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0733266, 0)
 
 [node name="Chests" type="GridMap" parent="." unique_id=2093332203]
 
-[node name="Coin" parent="." unique_id=29428285 instance=ExtResource("3_e0an3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 1)
+[node name="Area3D" parent="." unique_id=1487812006 instance=ExtResource("4_p5pve")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.412905, 0, 0.9464271)

@@ -15,6 +15,10 @@ run/main_scene="uid://tr7pl1hhpak2"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[global_group]
+
+chests=""
+
 [input]
 
 move_up={

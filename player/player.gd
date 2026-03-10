@@ -33,3 +33,7 @@ func _handle_rotation( direction: Vector3):
 func add_coins(amount: int = 1) -> void:
 	coins += amount
 	coin_collected.emit(coins, amount)
+
+func apply_chest_effect(effect: ChestEffectBase) -> void:
+	if effect is AddMoneyEffect:
+		add_coins(effect.amount_to_add)

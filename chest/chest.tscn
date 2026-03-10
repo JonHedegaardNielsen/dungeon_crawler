@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://b1bjcpdfcew3j"]
+
+[ext_resource type="Script" uid="uid://r50cc063vwb7" path="res://chest/chest.gd" id="1_3eoae"]
+[ext_resource type="ArrayMesh" uid="uid://c3dy5papkxhmq" path="res://kenney_mini-dungeon/Models/OBJ format/chest.obj" id="1_wpqpm"]
+[ext_resource type="Script" uid="uid://br4ia5gsscwyk" path="res://chest/chest_effects/add_money_effect.gd" id="2_08cju"]
+
+[sub_resource type="Resource" id="Resource_08cju"]
+script = ExtResource("2_08cju")
+metadata/_custom_type_script = "uid://br4ia5gsscwyk"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3eoae"]
+size = Vector3(1, 1.0393066, 1)
+
+[node name="Area3D" type="Area3D" unique_id=1487812006 groups=["chests"]]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_3eoae")
+chest_effect = SubResource("Resource_08cju")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1207793039]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.05364856, 0.24938965, 0)
+shape = SubResource("BoxShape3D_3eoae")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1726494345]
+mesh = ExtResource("1_wpqpm")
