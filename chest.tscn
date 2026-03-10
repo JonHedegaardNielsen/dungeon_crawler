@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://5c7qmy0nuodu"]
+
+[ext_resource type="Script" uid="uid://r50cc063vwb7" path="res://chest/chest.gd" id="1_8uwsg"]
+[ext_resource type="ArrayMesh" uid="uid://c3dy5papkxhmq" path="res://kenney_mini-dungeon/Models/OBJ format/chest.obj" id="1_twpm2"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8uwsg"]
+
+[node name="Chest" type="Area3D" unique_id=1256117566]
+script = ExtResource("1_8uwsg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1972573273]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4819957, 0)
+shape = SubResource("BoxShape3D_8uwsg")
+
+[node name="Chest" type="MeshInstance3D" parent="." unique_id=541749026]
+mesh = ExtResource("1_twpm2")

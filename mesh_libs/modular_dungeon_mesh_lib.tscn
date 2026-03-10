@@ -1,0 +1,199 @@
+[gd_scene format=3 uid="uid://bdmpyym2diwt"]
+
+[ext_resource type="ArrayMesh" uid="uid://6bt75cfq2xn2" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/corridor-corner.obj" id="1_5btyq"]
+[ext_resource type="ArrayMesh" uid="uid://cg68pqg7yx1dv" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/corridor-end.obj" id="2_xuvgo"]
+[ext_resource type="ArrayMesh" uid="uid://c42rtmkfegsc1" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/corridor-intersection.obj" id="3_e01m5"]
+[ext_resource type="ArrayMesh" uid="uid://bwjrahdpfxwp7" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/corridor-junction.obj" id="4_s3o6u"]
+[ext_resource type="ArrayMesh" uid="uid://bcpkb0rqwyire" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/corridor-transition.obj" id="5_105gr"]
+[ext_resource type="ArrayMesh" uid="uid://ckohq4cuw031u" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/corridor-wide-corner.obj" id="6_sahdl"]
+[ext_resource type="ArrayMesh" uid="uid://kabawl1xjn82" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/corridor-wide-end.obj" id="7_rveun"]
+[ext_resource type="ArrayMesh" uid="uid://dabp1npsxc0eg" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/corridor-wide-intersection.obj" id="8_tu53w"]
+[ext_resource type="ArrayMesh" uid="uid://dn4ulsog7pnhn" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/corridor-wide-junction.obj" id="9_3bcyt"]
+[ext_resource type="ArrayMesh" uid="uid://be13ukrhpc3gr" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/corridor-wide.obj" id="10_cps2n"]
+[ext_resource type="ArrayMesh" uid="uid://df7vxpuvlk2lu" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/corridor.obj" id="11_88lmk"]
+[ext_resource type="ArrayMesh" uid="uid://j1ujo5jkjb5q" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/gate-door-window.obj" id="12_gjnrf"]
+[ext_resource type="ArrayMesh" uid="uid://bexwccqnf3h83" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/gate-door.obj" id="13_blqwv"]
+[ext_resource type="ArrayMesh" uid="uid://cr70vp4433nuw" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/gate-metal-bars.obj" id="14_v5ykr"]
+[ext_resource type="ArrayMesh" uid="uid://d2b2bn2ex201n" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/gate.obj" id="15_si303"]
+[ext_resource type="ArrayMesh" uid="uid://cfa0dlkn0g2n5" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/room-corner.obj" id="16_ug5wl"]
+[ext_resource type="ArrayMesh" uid="uid://ck3u6gi15yl68" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/room-large-variation.obj" id="17_ll305"]
+[ext_resource type="ArrayMesh" uid="uid://dq0xhhk5ehius" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/room-large.obj" id="18_pl50g"]
+[ext_resource type="ArrayMesh" uid="uid://dllf4hcpbdmko" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/room-small-variation.obj" id="19_ubjh8"]
+[ext_resource type="ArrayMesh" uid="uid://tnw8y1px2mop" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/room-small.obj" id="20_70tcv"]
+[ext_resource type="ArrayMesh" uid="uid://bxpphp6ghv60q" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/room-wide-variation.obj" id="21_8mcqb"]
+[ext_resource type="ArrayMesh" uid="uid://bf68n8rtihqsc" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/room-wide.obj" id="22_ktelo"]
+[ext_resource type="ArrayMesh" uid="uid://brap8nm2pnf4i" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/stairs-wide.obj" id="23_biffr"]
+[ext_resource type="ArrayMesh" uid="uid://bnw2g13wypv36" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/stairs.obj" id="24_tfysu"]
+[ext_resource type="ArrayMesh" uid="uid://cll5r8cundtbu" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/template-corner.obj" id="25_dcxrj"]
+[ext_resource type="ArrayMesh" uid="uid://cwr7p45hd5n3k" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/template-detail.obj" id="26_44slo"]
+[ext_resource type="ArrayMesh" uid="uid://b0w2a70dmrwd0" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/template-floor-big.obj" id="27_g0act"]
+[ext_resource type="ArrayMesh" uid="uid://c5tpytlqame4n" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/template-floor-detail-a.obj" id="28_poikk"]
+[ext_resource type="ArrayMesh" uid="uid://csm1of4382noa" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/template-floor-detail.obj" id="29_38fno"]
+[ext_resource type="ArrayMesh" uid="uid://fob8yl6j8kr5" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/template-floor-layer-hole.obj" id="30_f78l4"]
+[ext_resource type="ArrayMesh" uid="uid://ca0udf3sq3xjv" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/template-floor-layer-raised.obj" id="31_g082v"]
+[ext_resource type="ArrayMesh" uid="uid://b35xptwnck4iv" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/template-floor-layer.obj" id="32_7cuxr"]
+[ext_resource type="ArrayMesh" uid="uid://cdqr5qee584iy" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/template-floor.obj" id="33_bbhay"]
+[ext_resource type="ArrayMesh" uid="uid://bsuvifir2nfqk" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/template-wall-corner.obj" id="34_6ator"]
+[ext_resource type="ArrayMesh" uid="uid://cgj1ya5e6vlx7" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/template-wall-detail-a.obj" id="35_l4d61"]
+[ext_resource type="ArrayMesh" uid="uid://cqq28a50jhnxj" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/template-wall-half.obj" id="36_q1oxn"]
+[ext_resource type="ArrayMesh" uid="uid://b3hdidw85r5pj" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/template-wall-stairs.obj" id="37_wraja"]
+[ext_resource type="ArrayMesh" uid="uid://ch1wu1e1md28" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/template-wall-top.obj" id="38_hyl4h"]
+[ext_resource type="ArrayMesh" uid="uid://joih1ya8hpl7" path="res://kenney_modular-dungeon-kit_1.0/Models/OBJ format/template-wall.obj" id="39_ekv7q"]
+
+[node name="ModularDungeonMeshLib" type="Node3D" unique_id=2062508888]
+
+[node name="CorridorCorner" type="MeshInstance3D" parent="." unique_id=1951120274]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("1_5btyq")
+
+[node name="CorridorEnd" type="MeshInstance3D" parent="." unique_id=906797180]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("2_xuvgo")
+
+[node name="CorridorIntersection" type="MeshInstance3D" parent="." unique_id=1346089867]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("3_e01m5")
+
+[node name="CorridorJunction" type="MeshInstance3D" parent="." unique_id=1707244505]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("4_s3o6u")
+
+[node name="CorridorTransition" type="MeshInstance3D" parent="." unique_id=628871661]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("5_105gr")
+
+[node name="CorridorWideCorner" type="MeshInstance3D" parent="." unique_id=468740296]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("6_sahdl")
+
+[node name="CorridorWideEnd" type="MeshInstance3D" parent="." unique_id=366925660]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("7_rveun")
+
+[node name="CorridorWideIntersection" type="MeshInstance3D" parent="." unique_id=902792606]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("8_tu53w")
+
+[node name="CorridorWideJunction" type="MeshInstance3D" parent="." unique_id=1904477433]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("9_3bcyt")
+
+[node name="CorridorWide" type="MeshInstance3D" parent="." unique_id=1904525567]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("10_cps2n")
+
+[node name="Corridor" type="MeshInstance3D" parent="." unique_id=1205827466]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("11_88lmk")
+
+[node name="GateDoorWindow" type="MeshInstance3D" parent="." unique_id=349448172]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("12_gjnrf")
+
+[node name="GateDoor" type="MeshInstance3D" parent="." unique_id=1140060939]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("13_blqwv")
+
+[node name="GateMetalBars" type="MeshInstance3D" parent="." unique_id=1022620227]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("14_v5ykr")
+
+[node name="Gate" type="MeshInstance3D" parent="." unique_id=237617719]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("15_si303")
+
+[node name="RoomCorner" type="MeshInstance3D" parent="." unique_id=1173175696]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("16_ug5wl")
+
+[node name="RoomLargeVariation" type="MeshInstance3D" parent="." unique_id=1135102566]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("17_ll305")
+
+[node name="RoomLarge" type="MeshInstance3D" parent="." unique_id=1671866406]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("18_pl50g")
+
+[node name="RoomSmallVariation" type="MeshInstance3D" parent="." unique_id=1163382884]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("19_ubjh8")
+
+[node name="RoomSmall" type="MeshInstance3D" parent="." unique_id=1791541160]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("20_70tcv")
+
+[node name="RoomWideVariation" type="MeshInstance3D" parent="." unique_id=205844]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("21_8mcqb")
+
+[node name="RoomWide" type="MeshInstance3D" parent="." unique_id=2005868672]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("22_ktelo")
+
+[node name="StairsWide" type="MeshInstance3D" parent="." unique_id=1247980840]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("23_biffr")
+
+[node name="Stairs" type="MeshInstance3D" parent="." unique_id=119921084]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("24_tfysu")
+
+[node name="TemplateCorner" type="MeshInstance3D" parent="." unique_id=1176102067]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("25_dcxrj")
+
+[node name="TemplateDetail" type="MeshInstance3D" parent="." unique_id=342233361]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("26_44slo")
+
+[node name="TemplateFloorBig" type="MeshInstance3D" parent="." unique_id=576304037]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("27_g0act")
+
+[node name="TemplateFloorDetailA" type="MeshInstance3D" parent="." unique_id=382543450]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("28_poikk")
+
+[node name="TemplateFloorDetail" type="MeshInstance3D" parent="." unique_id=1122886476]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("29_38fno")
+
+[node name="TemplateFloorLayerHole" type="MeshInstance3D" parent="." unique_id=1990523754]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("30_f78l4")
+
+[node name="TemplateFloorLayerRaised" type="MeshInstance3D" parent="." unique_id=1310852447]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("31_g082v")
+
+[node name="TemplateFloorLayer" type="MeshInstance3D" parent="." unique_id=2834483]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("32_7cuxr")
+
+[node name="TemplateFloor" type="MeshInstance3D" parent="." unique_id=1334231434]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("33_bbhay")
+
+[node name="TemplateWallCorner" type="MeshInstance3D" parent="." unique_id=1927730687]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("34_6ator")
+
+[node name="TemplateWallDetailA" type="MeshInstance3D" parent="." unique_id=1585547443]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("35_l4d61")
+
+[node name="TemplateWallHalf" type="MeshInstance3D" parent="." unique_id=795135004]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("36_q1oxn")
+
+[node name="TemplateWallStairs" type="MeshInstance3D" parent="." unique_id=1409377959]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("37_wraja")
+
+[node name="TemplateWallTop" type="MeshInstance3D" parent="." unique_id=1403250463]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("38_hyl4h")
+
+[node name="TemplateWall" type="MeshInstance3D" parent="." unique_id=898550370]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.101045, 0, -5.9990644)
+mesh = ExtResource("39_ekv7q")

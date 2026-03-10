@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dcd6splq1tcgw"]
+
+[ext_resource type="ArrayMesh" uid="uid://c0kbolimhpe1p" path="res://kenney_mini-dungeon/Models/OBJ format/coin.obj" id="1_d5gmh"]
+[ext_resource type="Script" path="res://coin.gd" id="2_0t63x"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0t63x"]
+size = Vector3(1, 0.5361328, 1)
+
+[node name="Coin" type="Node3D" unique_id=29428285 node_paths=PackedStringArray("area")]
+script = ExtResource("2_0t63x")
+area = NodePath("Area3D")
+
+[node name="Coin" type="MeshInstance3D" parent="." unique_id=1790885692]
+mesh = ExtResource("1_d5gmh")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=12667462]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=328235724]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2319336, 0)
+shape = SubResource("BoxShape3D_0t63x")

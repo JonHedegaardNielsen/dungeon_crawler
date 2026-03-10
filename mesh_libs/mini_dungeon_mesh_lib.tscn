@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://ci8seup2d1ivd"]
+
+[ext_resource type="ArrayMesh" uid="uid://bb8tcm06pli11" path="res://kenney_mini-dungeon/Models/OBJ format/banner.obj" id="1_6ubk2"]
+[ext_resource type="ArrayMesh" uid="uid://irqewxr5i8qq" path="res://kenney_mini-dungeon/Models/OBJ format/barrel.obj" id="2_gqckv"]
+[ext_resource type="ArrayMesh" uid="uid://3lu1iaky4i0j" path="res://kenney_mini-dungeon/Models/OBJ format/character-human.obj" id="3_85wtd"]
+[ext_resource type="ArrayMesh" uid="uid://cusixd5qyyb7g" path="res://kenney_mini-dungeon/Models/OBJ format/character-orc.obj" id="4_x3kdo"]
+[ext_resource type="ArrayMesh" uid="uid://c3dy5papkxhmq" path="res://kenney_mini-dungeon/Models/OBJ format/chest.obj" id="5_hibwl"]
+[ext_resource type="ArrayMesh" uid="uid://c0kbolimhpe1p" path="res://kenney_mini-dungeon/Models/OBJ format/coin.obj" id="6_txn7b"]
+[ext_resource type="ArrayMesh" uid="uid://cndchgqys4xtk" path="res://kenney_mini-dungeon/Models/OBJ format/column.obj" id="7_gmucf"]
+[ext_resource type="ArrayMesh" uid="uid://dj7cut32bdbmh" path="res://kenney_mini-dungeon/Models/OBJ format/dirt.obj" id="8_v4xn8"]
+[ext_resource type="ArrayMesh" uid="uid://di4ibrrqmoysk" path="res://kenney_mini-dungeon/Models/OBJ format/floor.obj" id="10_yforu"]
+[ext_resource type="ArrayMesh" uid="uid://qj8f2icb14mo" path="res://kenney_mini-dungeon/Models/OBJ format/gate.obj" id="11_fw62s"]
+[ext_resource type="ArrayMesh" uid="uid://c1uoahmle1knc" path="res://kenney_mini-dungeon/Models/OBJ format/rocks.obj" id="12_6mm7l"]
+[ext_resource type="ArrayMesh" uid="uid://dbh8b4lu6qtlu" path="res://kenney_mini-dungeon/Models/OBJ format/shield-rectangle.obj" id="13_igspi"]
+[ext_resource type="ArrayMesh" uid="uid://c5ljnxx4ol6or" path="res://kenney_mini-dungeon/Models/OBJ format/shield-round.obj" id="14_7qeci"]
+[ext_resource type="ArrayMesh" uid="uid://bt6ygki7oesx" path="res://kenney_mini-dungeon/Models/OBJ format/stairs.obj" id="15_bro86"]
+[ext_resource type="ArrayMesh" uid="uid://bry2i316x868o" path="res://kenney_mini-dungeon/Models/OBJ format/stones.obj" id="16_hoxyy"]
+[ext_resource type="ArrayMesh" uid="uid://vpr2baoe15b3" path="res://kenney_mini-dungeon/Models/OBJ format/trap.obj" id="17_pk8sm"]
+[ext_resource type="ArrayMesh" uid="uid://d4bso20tqt1a7" path="res://kenney_mini-dungeon/Models/OBJ format/wall-half.obj" id="18_j0q0o"]
+[ext_resource type="ArrayMesh" uid="uid://tpkctr8uoey7" path="res://kenney_mini-dungeon/Models/OBJ format/wall-narrow.obj" id="19_d5bto"]
+[ext_resource type="ArrayMesh" uid="uid://cun7lnj1gtxcv" path="res://kenney_mini-dungeon/Models/OBJ format/wall-opening.obj" id="20_vbokp"]
+[ext_resource type="ArrayMesh" uid="uid://d4i5grglf7df7" path="res://kenney_mini-dungeon/Models/OBJ format/wall.obj" id="21_sy5um"]
+[ext_resource type="ArrayMesh" uid="uid://bwfdkmnccj4cu" path="res://kenney_mini-dungeon/Models/OBJ format/weapon-spear.obj" id="22_ayiam"]
+[ext_resource type="ArrayMesh" uid="uid://d2461xstwg2el" path="res://kenney_mini-dungeon/Models/OBJ format/weapon-sword.obj" id="23_1gjwu"]
+[ext_resource type="ArrayMesh" uid="uid://chahqfreyvr5d" path="res://kenney_mini-dungeon/Models/OBJ format/wood-structure.obj" id="24_egsxt"]
+[ext_resource type="ArrayMesh" uid="uid://dmijasoirrs7r" path="res://kenney_mini-dungeon/Models/OBJ format/wood-support.obj" id="25_ennvw"]
+
+[node name="MiniDungeonMeshLib" type="Node3D" unique_id=919483945]
+
+[node name="Banner" type="MeshInstance3D" parent="." unique_id=400546249]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38499725, 0, 0.07079244)
+mesh = ExtResource("1_6ubk2")
+
+[node name="Barrel" type="MeshInstance3D" parent="." unique_id=1697402200]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38499725, 0, 0.07079244)
+mesh = ExtResource("2_gqckv")
+
+[node name="CharacterHuman" type="MeshInstance3D" parent="." unique_id=1237646577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38499725, 0, 0.07079244)
+mesh = ExtResource("3_85wtd")
+
+[node name="CharacterOrc" type="MeshInstance3D" parent="." unique_id=586107594]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38499725, 0, 0.07079244)
+mesh = ExtResource("4_x3kdo")
+
+[node name="Chest" type="MeshInstance3D" parent="." unique_id=781097029]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38499725, 0, 0.07079244)
+mesh = ExtResource("5_hibwl")
+
+[node name="Coin" type="MeshInstance3D" parent="." unique_id=1782710600]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38499725, 0, 0.07079244)
+mesh = ExtResource("6_txn7b")
+
+[node name="Column" type="MeshInstance3D" parent="." unique_id=515280981]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38499725, 0, 0.07079244)
+mesh = ExtResource("7_gmucf")
+
+[node name="Dirt" type="MeshInstance3D" parent="." unique_id=1370033197]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38499725, 0, 0.07079244)
+mesh = ExtResource("8_v4xn8")
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=79093215]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38499725, 0, 0.07079244)
+mesh = ExtResource("10_yforu")
+
+[node name="Gate" type="MeshInstance3D" parent="." unique_id=1534825315]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38499725, 0, 0.07079244)
+mesh = ExtResource("11_fw62s")
+
+[node name="Rocks" type="MeshInstance3D" parent="." unique_id=13656825]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38499725, 0, 0.07079244)
+mesh = ExtResource("12_6mm7l")
+
+[node name="ShieldRectangle" type="MeshInstance3D" parent="." unique_id=1876536422]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38499725, 0, 0.07079244)
+mesh = ExtResource("13_igspi")
+
+[node name="ShieldRound" type="MeshInstance3D" parent="." unique_id=539001556]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38499725, 0, 0.07079244)
+mesh = ExtResource("14_7qeci")
+
+[node name="Stairs" type="MeshInstance3D" parent="." unique_id=34889529]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38499725, 0, 0.07079244)
+mesh = ExtResource("15_bro86")
+
+[node name="Stones" type="MeshInstance3D" parent="." unique_id=2076377583]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38499725, 0, 0.07079244)
+mesh = ExtResource("16_hoxyy")
+
+[node name="Trap" type="MeshInstance3D" parent="." unique_id=1463374619]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38499725, 0, 0.07079244)
+mesh = ExtResource("17_pk8sm")
+
+[node name="WallHalf" type="MeshInstance3D" parent="." unique_id=1538336155]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38499725, 0, 0.07079244)
+mesh = ExtResource("18_j0q0o")
+
+[node name="WallNarrow" type="MeshInstance3D" parent="." unique_id=889304975]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38499725, 0, 0.07079244)
+mesh = ExtResource("19_d5bto")
+
+[node name="WallOpening" type="MeshInstance3D" parent="." unique_id=2023842717]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38499725, 0, 0.07079244)
+mesh = ExtResource("20_vbokp")
+
+[node name="Wall" type="MeshInstance3D" parent="." unique_id=1802792606]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38499725, 0, 0.07079244)
+mesh = ExtResource("21_sy5um")
+
+[node name="WeaponSpear" type="MeshInstance3D" parent="." unique_id=1554936290]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38499725, 0, 0.07079244)
+mesh = ExtResource("22_ayiam")
+
+[node name="WeaponSword" type="MeshInstance3D" parent="." unique_id=525861666]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38499725, 0, 0.07079244)
+mesh = ExtResource("23_1gjwu")
+
+[node name="WoodStructure" type="MeshInstance3D" parent="." unique_id=911163672]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38499725, 0, 0.07079244)
+mesh = ExtResource("24_egsxt")
+
+[node name="WoodSupport" type="MeshInstance3D" parent="." unique_id=245822316]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.38499725, 0, 0.07079244)
+mesh = ExtResource("25_ennvw")

@@ -1,0 +1,52 @@
+[gd_scene format=3 uid="uid://debhkgrlgcd5v"]
+
+[ext_resource type="ArrayMesh" uid="uid://d4bso20tqt1a7" path="res://kenney_mini-dungeon/Models/OBJ format/wall-half.obj" id="1_osu0b"]
+[ext_resource type="ArrayMesh" uid="uid://tpkctr8uoey7" path="res://kenney_mini-dungeon/Models/OBJ format/wall-narrow.obj" id="2_1hxgy"]
+[ext_resource type="ArrayMesh" uid="uid://cun7lnj1gtxcv" path="res://kenney_mini-dungeon/Models/OBJ format/wall-opening.obj" id="3_m8lmx"]
+[ext_resource type="ArrayMesh" uid="uid://d4i5grglf7df7" path="res://kenney_mini-dungeon/Models/OBJ format/wall.obj" id="4_gge3o"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_osu0b"]
+size = Vector3(1, 1.4412842, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_12jvv"]
+size = Vector3(1.1838379, 1.0356445, 1.1593094)
+
+[node name="MiniDungeonWallMeshLib" type="StaticBody3D" unique_id=798983835]
+
+[node name="WallHalf" type="MeshInstance3D" parent="." unique_id=1149421945]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.028734088, 1.1920929e-07, 0.0005555153)
+mesh = ExtResource("1_osu0b")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WallHalf" unique_id=721768249]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WallHalf/StaticBody3D" unique_id=2084936490]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4855169, 0)
+shape = SubResource("BoxShape3D_osu0b")
+
+[node name="WallNarrow" type="MeshInstance3D" parent="." unique_id=1871605042]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.028734088, 1.1920929e-07, 0.0005555153)
+mesh = ExtResource("2_1hxgy")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="WallNarrow" unique_id=950026609]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WallNarrow/StaticBody3D" unique_id=1023597979]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4855169, 0)
+shape = SubResource("BoxShape3D_osu0b")
+
+[node name="WallOpening" type="MeshInstance3D" parent="." unique_id=1525682260]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.028734088, 1.1920929e-07, 0.0005555153)
+mesh = ExtResource("3_m8lmx")
+
+[node name="Wall" type="MeshInstance3D" parent="." unique_id=1839609978]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.028734088, 1.1920929e-07, 0.0005555153)
+mesh = ExtResource("4_gge3o")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Wall" unique_id=1855464767]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall/StaticBody3D" unique_id=476536812]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4855169, 0)
+shape = SubResource("BoxShape3D_osu0b")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1977193241]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03527832, 0.50590724, 0.002696991)
+shape = SubResource("BoxShape3D_12jvv")
