@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://75w260ibs5sg"]
 
-[ext_resource type="Script" uid="uid://cit278pnl0tll" path="res://chest/chast_reward_message.gd" id="1_qbhlx"]
+[ext_resource type="Script" uid="uid://cit278pnl0tll" path="res://chest/chest_reward_message.gd" id="1_0lbig"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qbhlx"]
 bg_color = Color(0.90588236, 0.9098039, 0.62352943, 0.6039216)
@@ -34,7 +34,7 @@ offset_bottom = 252.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_0hg2b")
-script = ExtResource("1_qbhlx")
+script = ExtResource("1_0lbig")
 message_label = NodePath("ChastRewardMessage/Label")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1737843257]

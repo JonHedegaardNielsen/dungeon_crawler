@@ -11,7 +11,7 @@ metadata/_custom_type_script = "uid://br4ia5gsscwyk"
 [sub_resource type="BoxShape3D" id="BoxShape3D_3eoae"]
 size = Vector3(1, 1.0393066, 1)
 
-[node name="Area3D" type="Area3D" unique_id=1487812006 groups=["chests"]]
+[node name="Chest" type="Area3D" unique_id=1487812006 groups=["chests"]]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_3eoae")

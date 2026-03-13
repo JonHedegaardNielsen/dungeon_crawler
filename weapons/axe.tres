@@ -1,9 +1,13 @@
 [gd_resource type="Resource" script_class="MeleeWeapon" format=3 uid="uid://chkcklu3hre0c"]
 
+[ext_resource type="PackedScene" uid="uid://b5ebnxdpjlwm6" path="res://enemy_axe_attack_hit_box.tscn" id="1_b7o53"]
 [ext_resource type="ArrayMesh" uid="uid://cryfk5jg05nwp" path="res://KayKit_Adventurers_2.0_FREE/Assets/obj/axe_1handed.obj" id="1_j01sn"]
 [ext_resource type="Script" uid="uid://cl848l27ilpjw" path="res://weapons/melee_weapon.gd" id="1_miew3"]
 
 [resource]
 script = ExtResource("1_miew3")
+damage = 20
 mesh = ExtResource("1_j01sn")
+attack_speed = 2.0
+hitbox = ExtResource("1_b7o53")
 metadata/_custom_type_script = "uid://cl848l27ilpjw"

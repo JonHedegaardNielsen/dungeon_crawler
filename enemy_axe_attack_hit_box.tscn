@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b5ebnxdpjlwm6"]
+
+[ext_resource type="Script" uid="uid://bu7n2ubcoy21i" path="res://enemy_axe_attack_hit_box.gd" id="1_nuuf4"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_nuuf4"]
+height = 1.7265625
+
+[node name="EnemyAxeAttackHitBox" type="Area3D" unique_id=762875753]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_nuuf4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1365556797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.13671875, 0)
+shape = SubResource("CapsuleShape3D_nuuf4")
+
+[connection signal="body_entered" from="." to="." method="_on_attack_hit"]
