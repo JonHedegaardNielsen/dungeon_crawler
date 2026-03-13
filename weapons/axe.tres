@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="MeleeWeapon" format=3 uid="uid://chkcklu3hre0c"]
+
+[ext_resource type="ArrayMesh" uid="uid://cryfk5jg05nwp" path="res://KayKit_Adventurers_2.0_FREE/Assets/obj/axe_1handed.obj" id="1_j01sn"]
+[ext_resource type="Script" uid="uid://cl848l27ilpjw" path="res://weapons/melee_weapon.gd" id="1_miew3"]
+
+[resource]
+script = ExtResource("1_miew3")
+mesh = ExtResource("1_j01sn")
+metadata/_custom_type_script = "uid://cl848l27ilpjw"

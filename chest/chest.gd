@@ -9,5 +9,4 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node) -> void:
 	if body is Player:
-		body.apply_chest_effect(chest_effect)
 		chest_entered.emit(chest_effect)

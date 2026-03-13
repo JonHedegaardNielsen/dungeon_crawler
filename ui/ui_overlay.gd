@@ -11,8 +11,9 @@ func _ready() -> void:
 func get_coin(new_amount: int, amount_added: int) -> void:
 	coin_label.text = "Coins: " + str(new_amount)
 
-func display_chest_effect_message(chest_effect: ChestEffectBase) -> void:
+func display_chest_effect_message(chest_effect: ChestEffectBase, player: Player) -> void:
 	var message: ChestRewardMessage = CHEST_EFFECT_MESSAGE_SCENE.instantiate()
-	message.message = chest_effect.effect_description
+	message.effect = chest_effect
+	message.player = player
 	middle_position.add_child(message)
 	get_tree().paused = true

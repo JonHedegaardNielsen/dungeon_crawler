@@ -1,6 +1,7 @@
 extends CharacterBody3D
 class_name Player
 
+@export var waepon: MeleeWeapon
 @export var rotating_body: Node3D
 const SPEED = 5.0
 signal coin_collected(new_amount: int, amount_added: int)

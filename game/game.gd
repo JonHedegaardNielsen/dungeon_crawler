@@ -11,5 +11,5 @@ func _ready() -> void:
 			chest.chest_entered.connect(_on_chest_effect_triggered)
 
 func _on_chest_effect_triggered(effect: ChestEffectBase) -> void:
-	ui_overlay.display_chest_effect_message(effect)
+	ui_overlay.display_chest_effect_message(effect, player)
 	

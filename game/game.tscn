@@ -9,10 +9,11 @@
 tonemap_mode = 2
 tonemap_exposure = 0.73
 
-[node name="Game" type="Node3D" unique_id=1029415748 node_paths=PackedStringArray("map", "ui_overlay")]
+[node name="Game" type="Node3D" unique_id=1029415748 node_paths=PackedStringArray("map", "ui_overlay", "player")]
 script = ExtResource("1_4fuuu")
 map = NodePath("Map")
 ui_overlay = NodePath("UIOverlay")
+player = NodePath("Player")
 
 [node name="Map" parent="." unique_id=1172338637 instance=ExtResource("1_e2o6t")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2420826, 0)
