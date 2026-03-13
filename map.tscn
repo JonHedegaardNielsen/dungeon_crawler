@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cd4n6p0kgvcyj" path="res://coin/coin.tscn" id="2_urblq"]
 [ext_resource type="PackedScene" uid="uid://b1bjcpdfcew3j" path="res://chest/chest.tscn" id="4_p5pve"]
 
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_urblq"]
+
 [node name="Map" type="Node3D" unique_id=1172338637]
 script = ExtResource("1_urblq")
 
@@ -37,3 +39,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0733266, 0)
 
 [node name="Area3D" parent="." unique_id=1487812006 instance=ExtResource("4_p5pve")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.412905, 0, 0.9464271)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1264445699]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.17520332, 0)
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1574515395]
+shape = SubResource("WorldBoundaryShape3D_urblq")

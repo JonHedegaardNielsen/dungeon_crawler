@@ -20,6 +20,7 @@ Button/font_sizes/font_size = 27
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_qbhlx")
 
 [node name="ChastRewardMessage" type="Control" unique_id=1857140192 node_paths=PackedStringArray("message_label")]
+process_mode = 2
 layout_mode = 3
 anchors_preset = 8
 anchor_left = 0.5

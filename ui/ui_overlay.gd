@@ -15,3 +15,4 @@ func display_chest_effect_message(chest_effect: ChestEffectBase) -> void:
 	var message: ChestRewardMessage = CHEST_EFFECT_MESSAGE_SCENE.instantiate()
 	message.message = chest_effect.effect_description
 	middle_position.add_child(message)
+	get_tree().paused = true
