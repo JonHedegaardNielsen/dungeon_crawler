@@ -20,7 +20,8 @@ func _ready():
 
 func actor_setup():
 	await get_tree().physics_frame
-	set_movement_target(target.global_position)
+	if is_instance_valid(target):
+		set_movement_target(target.global_position)
 
 func set_movement_target(movement_target: Vector3):
 	navigation_agent.set_target_position(movement_target)
@@ -64,3 +65,6 @@ func take_damage(amount: int) -> void:
 
 func _die() -> void:
 	queue_free()
+
+func _on_player_detected(player: Player) -> void:
+	target = player

@@ -6,11 +6,20 @@
 [ext_resource type="PackedScene" uid="uid://k8236y67dgtw" path="res://KayKit_Adventurers_2.0_FREE/Assets/gltf/axe_2handed.gltf" id="3_dawhl"]
 [ext_resource type="AnimationLibrary" uid="uid://wgpy7kyv4vs" path="res://KayKit_Skeletons_1.1_FREE/Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb" id="5_14fug"]
 [ext_resource type="Script" uid="uid://rjtrxpfvr7gx" path="res://basic_health_module.gd" id="6_bnuif"]
+[ext_resource type="PackedScene" uid="uid://duqby8jb6wqpy" path="res://enemies/line_of_sight_module/line_of_sight.tscn" id="7_oi2bk"]
+[ext_resource type="PackedScene" uid="uid://bw8fr0i34cm7c" path="res://enemies/health_bar/enemy_health_ui.tscn" id="8_8ahbu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dawhl"]
+radius = 0.72558594
+height = 2.5274658
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_8ahbu"]
+viewport_path = NodePath("SubViewport")
 
 [node name="CharacterBody3D" type="CharacterBody3D" unique_id=80069313 node_paths=PackedStringArray("health_module", "animation_player", "rotating_body", "attack_hitbox_spawn_point")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+collision_layer = 16
+collision_mask = 0
 script = ExtResource("1_5c0pr")
 health_module = NodePath("BasicHealthModule")
 animation_player = NodePath("Skeleton_Warrior/AnimationPlayer")
@@ -19,7 +28,7 @@ attack_hitbox_spawn_point = NodePath("Skeleton_Warrior/Node3D")
 
 [node name="Skeleton_Warrior" parent="." unique_id=1353912927 instance=ExtResource("1_6c4pj")]
 
-[node name="Skeleton3D" parent="Skeleton_Warrior/Rig_Medium" parent_id_path=PackedInt32Array(1353912927, 1253667127) index="0" unique_id=653087671]
+[node name="Skeleton3D" parent="Skeleton_Warrior/Rig_Medium" parent_id_path=PackedInt32Array(1353912927, 2009424939) index="0" unique_id=802753908]
 bones/1/position = Vector3(0, 0.39206383, 0)
 bones/1/rotation = Quaternion(-1.11122625e-10, 0.043157753, 2.5724098e-09, 0.9990683)
 bones/1/scale = Vector3(0.99999994, 1, 0.99999994)
@@ -60,7 +69,7 @@ bones/20/rotation = Quaternion(0.2740081, -6.3812955e-08, 1.927607e-07, 0.961727
 bones/21/rotation = Quaternion(-0.5590394, 0.11451276, -0.008627633, 0.82115)
 bones/22/rotation = Quaternion(-8.934892e-05, 0.9202217, -0.3913977, 2.0290998e-05)
 
-[node name="head" parent="Skeleton_Warrior/Rig_Medium/Skeleton3D" index="0" unique_id=525375440]
+[node name="head" parent="Skeleton_Warrior/Rig_Medium/Skeleton3D" index="0" unique_id=403374699]
 transform = Transform3D(0.99972045, -1.4014349e-09, 0.023646593, 1.3934147e-09, 0.9999998, 3.5568637e-10, -0.023646593, -3.2263736e-10, 0.99972045, -4.3038546e-09, 1.2278259, 1.5739471e-15)
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Skeleton_Warrior/Rig_Medium/Skeleton3D" index="10" unique_id=581754408]
@@ -82,13 +91,22 @@ path_desired_distance = 0.1
 path_max_distance = 0.01
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=968160495]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0099633, 0)
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0, 1.240371, 0)
 shape = SubResource("CapsuleShape3D_dawhl")
 
 [node name="BasicHealthModule" type="Node" parent="." unique_id=306764484]
 script = ExtResource("6_bnuif")
 metadata/_custom_type_script = "uid://rjtrxpfvr7gx"
 
+[node name="LineOfSight" parent="." unique_id=1634923949 instance=ExtResource("7_oi2bk")]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0, 1.0238942, 0)
+
+[node name="EnemyHealthUI" parent="." unique_id=1512071892 node_paths=PackedStringArray("health_module") instance=ExtResource("8_8ahbu")]
+transform = Transform3D(0.9999998, 0, 0, 0, 0.9999998, 0, 0, 0, 0.9999998, 0, 2.916888, 0)
+texture = SubResource("ViewportTexture_8ahbu")
+health_module = NodePath("../BasicHealthModule")
+
 [connection signal="death" from="BasicHealthModule" to="." method="_die"]
+[connection signal="player_detected" from="LineOfSight" to="." method="_on_player_detected"]
 
 [editable path="Skeleton_Warrior"]

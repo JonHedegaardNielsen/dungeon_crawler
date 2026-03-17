@@ -91,11 +91,11 @@ func attack() -> void:
 	if _current_melee_weapon_hitbox != null:
 		return
 	var hit_box: HitBox = weapon.hitbox.instantiate()
-	attack_hitbox_spawn_point.add_child(hit_box)
-	_current_melee_weapon_hitbox = hit_box
-	hit_box.collision_mask = 5
+	hit_box.set_collision_mask_value(5,true)
 	hit_box.hit_target.connect(_on_hit_target)
 	animation_player.play("Rig_Medium_General/Throw", -1, weapon.attack_speed)
+	_current_melee_weapon_hitbox = hit_box
+	attack_hitbox_spawn_point.add_child(hit_box)
 
 func _on_attack_animation_finished(animation_name: StringName) -> void:
 	if animation_name == "Rig_Medium_General/Throw":
