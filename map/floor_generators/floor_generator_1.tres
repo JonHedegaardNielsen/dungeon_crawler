@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="FloorGenerator" format=3 uid="uid://bts7h5absla7i"]
+
+[ext_resource type="Script" uid="uid://cp6yp5o1pphtf" path="res://map/map_generation/floor_generator.gd" id="1_1hurn"]
+[ext_resource type="PackedScene" uid="uid://bl7y4cc6dghio" path="res://map/rooms/base_room_scene.tscn" id="1_kj85m"]
+
+[resource]
+script = ExtResource("1_1hurn")
+room_uids = Array[PackedScene]([ExtResource("1_kj85m")])
+metadata/_custom_type_script = "uid://cp6yp5o1pphtf"
