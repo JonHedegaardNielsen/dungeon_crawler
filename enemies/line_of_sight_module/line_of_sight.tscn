@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://rfjn34ab3tvn" path="res://enemies/line_of_sight_module/line_of_sight_module.gd" id="1_x7i5m"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_tu5vq"]
-radius = 100.0
+radius = 10.0
 
 [node name="LineOfSight" type="Node3D" unique_id=1634923949 node_paths=PackedStringArray("vision_area", "vision_ray_cast")]
 script = ExtResource("1_x7i5m")

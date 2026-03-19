@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://din6cyixqwr4u" path="res://map.gd" id="1_k8c8k"]
 [ext_resource type="Resource" uid="uid://bts7h5absla7i" path="res://map/floor_generators/floor_generator_1.tres" id="2_i1xxn"]
+[ext_resource type="PackedScene" uid="uid://dan5yt6u3whot" path="res://player/player.tscn" id="3_i1xxn"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_i1xxn"]
 
 [node name="Map" type="Node3D" unique_id=1034856529 node_paths=PackedStringArray("_rooms_node")]
 script = ExtResource("1_k8c8k")
@@ -11,5 +14,12 @@ metadata/_custom_type_script = "uid://din6cyixqwr4u"
 
 [node name="Node3D" type="Node3D" parent="." unique_id=899355933]
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1982932123]
-transform = Transform3D(1, 0, 0, 0, -0.030974671, 0.9995202, 0, -0.9995202, -0.030974671, 0, 371.69403, 0.42608356)
+[node name="Player" parent="." unique_id=1796071540 instance=ExtResource("3_i1xxn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.1, 10)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1756492640]
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1364691356]
+shape = SubResource("WorldBoundaryShape3D_i1xxn")

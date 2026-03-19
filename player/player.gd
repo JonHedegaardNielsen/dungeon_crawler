@@ -77,11 +77,13 @@ func apply_chest_effect(effect: ChestEffectBase) -> void:
 
 func get_mouse_ray_hit() -> Dictionary:
 	var camera := get_viewport().get_camera_3d()
+	if camera == null:
+		return {}
 	var mouse_pos := get_viewport().get_mouse_position()
 	var ray_origin := camera.project_ray_origin(mouse_pos)
 	var ray_end := ray_origin + camera.project_ray_normal(mouse_pos) * 1000.0
 	var query := PhysicsRayQueryParameters3D.create(ray_origin, ray_end)
-	# query.collision_mask = 8
+	query.collision_mask = 128
 	query.collide_with_areas = true   # include Area3D nodes
 	query.collide_with_bodies = true  # include RigidBody3D, StaticBody3D, etc.
 	var space_state = get_world_3d().direct_space_state

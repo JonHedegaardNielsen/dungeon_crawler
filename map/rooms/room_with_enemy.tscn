@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://uq5wx0fk3kuj"]
+
+[ext_resource type="PackedScene" uid="uid://bl7y4cc6dghio" path="res://map/rooms/base_room_scene.tscn" id="1_dnnfo"]
+[ext_resource type="PackedScene" uid="uid://ch7qd21tu7t7n" path="res://enemies/melee_enemy.tscn" id="2_e0y34"]
+
+[node name="Room" unique_id=1070382 instance=ExtResource("1_dnnfo")]
+
+[node name="CharacterBody3D" parent="NavigationRegion3D" parent_id_path=PackedInt32Array(150055949) index="1" unique_id=80069313 instance=ExtResource("2_e0y34")]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 1.02635, 0.28920877, -0.4713316)
