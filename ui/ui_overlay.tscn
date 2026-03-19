@@ -2,17 +2,34 @@
 
 [ext_resource type="Script" uid="uid://cl26t8u6dsrly" path="res://ui/ui_overlay.gd" id="1_2qecn"]
 
-[node name="UIOverlay" type="CanvasLayer" unique_id=177578171 node_paths=PackedStringArray("coin_label", "middle_position")]
+[sub_resource type="Theme" id="Theme_sq8m6"]
+Label/font_sizes/font_size = 32
+
+[node name="UIOverlay" type="CanvasLayer" unique_id=177578171 node_paths=PackedStringArray("_player_heath_bar", "coin_label", "middle_position", "_health_label")]
 script = ExtResource("1_2qecn")
-coin_label = NodePath("Label")
-middle_position = NodePath("Control")
+_player_heath_bar = NodePath("Control/HealthBar")
+coin_label = NodePath("Control/CoinCount")
+middle_position = NodePath("Control/MiddlePosition")
+_health_label = NodePath("Control/HealthBar/Label/HealthLabel")
 
-[node name="Label" type="Label" parent="." unique_id=656702693]
-offset_right = 82.0
-offset_bottom = 27.0
-
-[node name="Control" type="Control" parent="." unique_id=997665923]
+[node name="Control" type="Control" parent="." unique_id=1142529595]
 layout_mode = 3
+anchors_preset = 0
+offset_right = 1166.0
+offset_bottom = 644.0
+theme = SubResource("Theme_sq8m6")
+
+[node name="CoinCount" type="Label" parent="Control" unique_id=656702693]
+layout_mode = 0
+offset_left = 978.0
+offset_top = 2.0
+offset_right = 1151.0
+offset_bottom = 46.0
+text = "Coins: 0"
+horizontal_alignment = 2
+
+[node name="MiddlePosition" type="Control" parent="Control" unique_id=997665923]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -24,3 +41,34 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="HealthBar" type="ProgressBar" parent="Control" unique_id=1682235891]
+layout_mode = 0
+offset_right = 236.0
+offset_bottom = 58.0
+max_value = 10.0
+value = 10.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="Control/HealthBar" unique_id=340275534]
+layout_mode = 0
+offset_right = 234.0
+offset_bottom = 56.0
+text = "/"
+horizontal_alignment = 1
+
+[node name="HealthLabel" type="Label" parent="Control/HealthBar/Label" unique_id=361500342]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -1.0
+offset_right = 108.0
+offset_bottom = 44.0
+text = "10"
+horizontal_alignment = 2
+
+[node name="MaxHealthLabel" type="Label" parent="Control/HealthBar/Label" unique_id=974664081]
+layout_mode = 0
+offset_left = 130.0
+offset_right = 170.0
+offset_bottom = 45.0
+text = "10"

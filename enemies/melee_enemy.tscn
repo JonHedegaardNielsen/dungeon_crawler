@@ -16,7 +16,7 @@ height = 2.5274658
 [sub_resource type="ViewportTexture" id="ViewportTexture_8ahbu"]
 viewport_path = NodePath("SubViewport")
 
-[node name="CharacterBody3D" type="CharacterBody3D" unique_id=80069313 node_paths=PackedStringArray("health_module", "animation_player", "rotating_body", "attack_hitbox_spawn_point")]
+[node name="CharacterBody3D" type="CharacterBody3D" unique_id=80069313 node_paths=PackedStringArray("health_module", "animation_player", "rotating_body", "attack_hitbox_spawn_point", "_health_bar")]
 transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
 collision_layer = 16
 collision_mask = 0
@@ -25,10 +25,11 @@ health_module = NodePath("BasicHealthModule")
 animation_player = NodePath("Skeleton_Warrior/AnimationPlayer")
 rotating_body = NodePath("Skeleton_Warrior")
 attack_hitbox_spawn_point = NodePath("Skeleton_Warrior/Node3D")
+_health_bar = NodePath("EnemyHealthUI")
 
 [node name="Skeleton_Warrior" parent="." unique_id=1353912927 instance=ExtResource("1_6c4pj")]
 
-[node name="Skeleton3D" parent="Skeleton_Warrior/Rig_Medium" parent_id_path=PackedInt32Array(1353912927, 2009424939) index="0" unique_id=802753908]
+[node name="Skeleton3D" parent="Skeleton_Warrior/Rig_Medium" parent_id_path=PackedInt32Array(1353912927, 1253667127) index="0" unique_id=653087671]
 bones/1/position = Vector3(0, 0.39206383, 0)
 bones/1/rotation = Quaternion(-1.11122625e-10, 0.043157753, 2.5724098e-09, 0.9990683)
 bones/1/scale = Vector3(0.99999994, 1, 0.99999994)
@@ -69,7 +70,7 @@ bones/20/rotation = Quaternion(0.2740081, -6.3812955e-08, 1.927607e-07, 0.961727
 bones/21/rotation = Quaternion(-0.5590394, 0.11451276, -0.008627633, 0.82115)
 bones/22/rotation = Quaternion(-8.934892e-05, 0.9202217, -0.3913977, 2.0290998e-05)
 
-[node name="head" parent="Skeleton_Warrior/Rig_Medium/Skeleton3D" index="0" unique_id=403374699]
+[node name="head" parent="Skeleton_Warrior/Rig_Medium/Skeleton3D" index="0" unique_id=525375440]
 transform = Transform3D(0.99972045, -1.4014349e-09, 0.023646593, 1.3934147e-09, 0.9999998, 3.5568637e-10, -0.023646593, -3.2263736e-10, 0.99972045, -4.3038546e-09, 1.2278259, 1.5739471e-15)
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="Skeleton_Warrior/Rig_Medium/Skeleton3D" index="10" unique_id=581754408]

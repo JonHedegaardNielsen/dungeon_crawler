@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://dsj5chedhlkn"]
+
+[ext_resource type="Script" uid="uid://b2uwypbpyv3ke" path="res://world_objects/GoToNextFloorDoor/go_to_next_floor_door.gd" id="1_3t8qw"]
+[ext_resource type="PackedScene" uid="uid://cxlw28kybjld3" path="res://kenney_modular-dungeon-kit_1.0/Models/GLB format/gate-door.glb" id="2_g1n21"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_p4knq"]
+height = 1.0166016
+
+[node name="GoToNextFloorDoor" type="Node3D" unique_id=78553072]
+script = ExtResource("1_3t8qw")
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1748351303]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1663069553]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.49169922, 0)
+shape = SubResource("CylinderShape3D_p4knq")
+
+[node name="gate-door2" parent="." unique_id=962476007 instance=ExtResource("2_g1n21")]
+
+[node name="gate-door" parent="gate-door2" index="0" unique_id=208447889]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0, 0)
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_player_enter"]
+
+[editable path="gate-door2"]

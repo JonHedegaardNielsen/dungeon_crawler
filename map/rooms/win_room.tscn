@@ -1,5 +1,8 @@
 [gd_scene format=3 uid="uid://5y75speaf6b7"]
 
 [ext_resource type="PackedScene" uid="uid://bl7y4cc6dghio" path="res://map/rooms/base_room_scene.tscn" id="1_r64pl"]
+[ext_resource type="PackedScene" uid="uid://dsj5chedhlkn" path="res://world_objects/GoToNextFloorDoor/go_to_next_floor_door.tscn" id="2_4txbq"]
 
 [node name="Room" unique_id=1070382 instance=ExtResource("1_r64pl")]
+
+[node name="GoToNextFloorDoor" parent="." index="3" unique_id=78553072 instance=ExtResource("2_4txbq")]

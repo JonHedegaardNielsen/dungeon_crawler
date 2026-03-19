@@ -3,19 +3,21 @@
 [ext_resource type="Script" uid="uid://din6cyixqwr4u" path="res://map.gd" id="1_k8c8k"]
 [ext_resource type="Resource" uid="uid://bts7h5absla7i" path="res://map/floor_generators/floor_generator_1.tres" id="2_i1xxn"]
 [ext_resource type="PackedScene" uid="uid://dan5yt6u3whot" path="res://player/player.tscn" id="3_i1xxn"]
+[ext_resource type="PackedScene" uid="uid://c557yu4mh3qv8" path="res://ui/ui_overlay.tscn" id="4_0kj37"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_i1xxn"]
 
-[node name="Map" type="Node3D" unique_id=1034856529 node_paths=PackedStringArray("_rooms_node")]
+[node name="Map" type="Node3D" unique_id=1034856529 node_paths=PackedStringArray("_rooms_node", "player")]
 script = ExtResource("1_k8c8k")
 _rooms_node = NodePath("Node3D")
 floor_generator = ExtResource("2_i1xxn")
+player = NodePath("Player")
 metadata/_custom_type_script = "uid://din6cyixqwr4u"
 
 [node name="Node3D" type="Node3D" parent="." unique_id=899355933]
 
 [node name="Player" parent="." unique_id=1796071540 instance=ExtResource("3_i1xxn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.1, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1756492640]
 collision_layer = 128
@@ -23,3 +25,6 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1364691356]
 shape = SubResource("WorldBoundaryShape3D_i1xxn")
+
+[node name="UIOverlay" parent="." unique_id=177578171 node_paths=PackedStringArray("_player") instance=ExtResource("4_0kj37")]
+_player = NodePath("../Player")

@@ -14,17 +14,23 @@ const SPEED = 5.0
 signal coin_collected(new_amount: int, amount_added: int)
 var coins: int = 0
 var time_ran: float = 0.0
+var _camera: Camera3D
+@export var orbit_speed: float = 1.0
+@export var orbit_radius: float = 5.0
 @export var weapon_mesh: MeshInstance3D
 @export var attack_hitbox_spawn_point: Node3D
-
+signal health_change(int)
 var _current_melee_weapon_hitbox: HitBox
+var angle := 90.0
 func _ready() -> void:
+	_camera = get_viewport().get_camera_3d()
+	_rotate_camera(0, 1)
 	weapon_mesh.mesh = weapon.mesh
 	animation_player.animation_finished.connect(_on_attack_animation_finished)
 
 func handle_movement(delta: float) -> void:
 	var input_dir := Input.get_vector("move_right", "move_left", "move_down", "move_up")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var direction := (_camera.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		time_ran += delta
 		var mult = speed_curve.sample(time_ran)
@@ -40,7 +46,22 @@ func handle_movement(delta: float) -> void:
 			animation_player.play("Rig_Medium_General/Idle_A")
 	move_and_slide()
 
+func _rotate_camera(direction: float, delta: float) -> void:
+	angle += 2.0 * delta * direction
+	var offset = Vector3(cos(angle) * orbit_radius, 0.0, sin(angle) * orbit_radius) * 0.9
+	var target_position := global_position
+	target_position.y = _camera.global_position.y
+	_camera.global_position = target_position + offset
+	var old_y_direction := _camera.rotation.x
+	var position_to_look_at := global_position
+	position_to_look_at.y += 2
+	_camera.look_at(position_to_look_at, Vector3.UP)
+
 func _physics_process(delta: float) -> void:
+	if Input.is_action_pressed("rotate_camera_right"):
+		_rotate_camera(-1, delta)
+	if Input.is_action_pressed("rotate_camera_left"):
+		_rotate_camera(1, delta)
 	handle_movement(delta)
 	var pos := get_mouse_ray_hit()
 	
@@ -111,6 +132,13 @@ func _on_hit_target(body: PhysicsBody3D) -> void:
 
 func take_damage(amount: int) -> void:
 	_health_module.take_damage(amount)
+	health_change.emit(_health_module.health)
 
 func _die() -> void:
 	queue_free()
+
+func get_health() -> int:
+	return _health_module.health
+
+func get_max_health() -> int:
+	return _health_module.max_health

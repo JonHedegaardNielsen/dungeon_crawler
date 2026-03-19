@@ -20,7 +20,8 @@ func _generate_floor() -> void:
 	for lane in rooms.rooms:
 		for room in lane:
 			_rooms_node.add_child(room)
-
+	player.global_position = rooms.starting_room.global_position
+	player.global_position.y = 0.1
 	var chests := get_tree().get_nodes_in_group("chests")
 	for chest: Chest in chests:
 		chest.chest_entered.connect(_on_chest_effect)

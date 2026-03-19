@@ -13,8 +13,10 @@ var target_last_position: Vector3
 const ATTACK_HITBOX = preload("uid://b5ebnxdpjlwm6")
 var _current_attack_hitbox: HitBox
 @export var attack_hitbox_spawn_point: Node3D
-
+var _is_attacking: bool = false
+@export var _health_bar: Sprite3D
 func _ready():
+	_health_bar.visible = false
 	actor_setup.call_deferred()
 	animation_player.animation_finished.connect(_on_attack_animation_finished)
 
@@ -25,6 +27,7 @@ func actor_setup():
 
 func set_movement_target(movement_target: Vector3):
 	navigation_agent.set_target_position(movement_target)
+	_health_bar.visible = true
 
 func _physics_process(_delta):
 	if not is_instance_valid(target):
@@ -42,12 +45,14 @@ func _physics_process(_delta):
 	move_and_slide()
 
 func _attack() -> void:
-	if _current_attack_hitbox != null:
+	if _is_attacking:
 		return
+	_is_attacking = true
 	animation_player.play("Rig_Medium_General/Throw")
+	await get_tree().create_timer(0.5).timeout
 	var enemy_attack_hitbox: HitBox = ATTACK_HITBOX.instantiate()
-	attack_hitbox_spawn_point.add_child(enemy_attack_hitbox)
 	_current_attack_hitbox = enemy_attack_hitbox
+	attack_hitbox_spawn_point.add_child(enemy_attack_hitbox)
 	enemy_attack_hitbox.collision_mask = 2
 	enemy_attack_hitbox.hit_target.connect(_target_hit)
 
@@ -55,6 +60,7 @@ func _on_attack_animation_finished(animation_name: String) -> void:
 	if animation_name == "Rig_Medium_General/Throw" and _current_attack_hitbox != null:
 		_current_attack_hitbox.queue_free()
 		_current_attack_hitbox = null
+		_is_attacking = true
 
 func _target_hit(body: Player) -> void:
 	if body != null:

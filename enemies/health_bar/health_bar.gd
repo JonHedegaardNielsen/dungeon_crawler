@@ -11,4 +11,3 @@ func _ready() -> void:
 
 func _update_health_bar(amount: int) -> void:
 	health_bar.value = health_module.health
-	health_bar_label.text = str(health_module.health) + " / " + str(health_module.max_health)

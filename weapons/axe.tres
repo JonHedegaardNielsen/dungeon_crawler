@@ -6,7 +6,7 @@
 
 [resource]
 script = ExtResource("1_miew3")
-damage = 20
+damage = 2
 mesh = ExtResource("1_j01sn")
 attack_speed = 2.0
 hitbox = ExtResource("1_b7o53")
