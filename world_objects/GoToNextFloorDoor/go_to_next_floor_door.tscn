@@ -19,9 +19,9 @@ shape = SubResource("CylinderShape3D_p4knq")
 
 [node name="gate-door2" parent="." unique_id=962476007 instance=ExtResource("2_g1n21")]
 
-[node name="gate-door" parent="gate-door2" index="0" unique_id=208447889]
+[node name="gate-door" parent="gate-door2" index="0" unique_id=1213311689]
 transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0, 0)
 
-[connection signal="area_entered" from="Area3D" to="." method="_on_player_enter"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_player_enter"]
 
 [editable path="gate-door2"]

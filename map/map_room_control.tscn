@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dx2jkixdky6nv"]
+
+[ext_resource type="Script" uid="uid://dxxejd2py8kli" path="res://map/map_room_control.gd" id="1_pldgs"]
+
+[node name="MapRoomControl" type="Control" unique_id=1494034540]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_pldgs")

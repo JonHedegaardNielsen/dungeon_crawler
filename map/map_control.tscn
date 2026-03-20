@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://smj3tj8s8lg6"]
+
+[ext_resource type="Script" uid="uid://c01cfneh1h0b4" path="res://map/map_control.gd" id="1_6vvpm"]
+
+[node name="MapControl" type="GridContainer" unique_id=580763140]
+anchors_preset = -1
+offset_right = 200.0
+offset_bottom = 200.0
+size_flags_horizontal = 3
+columns = 5
+script = ExtResource("1_6vvpm")
+
+[node name="Control" type="Control" parent="." unique_id=578550091]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Control2" type="Control" parent="." unique_id=1876446802]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Control3" type="Control" parent="." unique_id=1631571033]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Control4" type="Control" parent="." unique_id=1119986508]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Control5" type="Control" parent="." unique_id=225281190]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Control6" type="Control" parent="." unique_id=1967126814]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

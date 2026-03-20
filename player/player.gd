@@ -1,7 +1,7 @@
 extends CharacterBody3D
 class_name Player
 
-@export var weapon: MeleeWeapon:
+@export var weapon: Weapon:
 	set(value):
 		if weapon_mesh != null:
 			weapon_mesh.mesh = value.mesh
@@ -19,6 +19,11 @@ var _camera: Camera3D
 @export var orbit_radius: float = 5.0
 @export var weapon_mesh: MeshInstance3D
 @export var attack_hitbox_spawn_point: Node3D
+
+@export var projectiles_node: Node
+
+var can_shoot := true
+
 signal health_change(int)
 var _current_melee_weapon_hitbox: HitBox
 var angle := 90.0
@@ -29,7 +34,7 @@ func _ready() -> void:
 	animation_player.animation_finished.connect(_on_attack_animation_finished)
 
 func handle_movement(delta: float) -> void:
-	var input_dir := Input.get_vector("move_right", "move_left", "move_down", "move_up")
+	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var direction := (_camera.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		time_ran += delta
@@ -70,9 +75,9 @@ func _physics_process(delta: float) -> void:
 		target_pos.y = global_position.y
 		rotating_body.look_at(target_pos, Vector3.UP)
 		rotating_body.global_rotation_degrees.y += 180.0
+		if Input.is_action_pressed("attack"):
+			attack(target_pos)
 	
-	if Input.is_action_pressed("attack"):
-		attack()
 
 func _handle_rotation( direction: Vector3):
 	var degrees: float = 0
@@ -110,15 +115,31 @@ func get_mouse_ray_hit() -> Dictionary:
 	var space_state = get_world_3d().direct_space_state
 	return space_state.intersect_ray(query)
 
-func attack() -> void:
-	if _current_melee_weapon_hitbox != null:
-		return
-	var hit_box: HitBox = weapon.hitbox.instantiate()
+func _melee_attack(_weapon: MeleeWeapon):
+	var hit_box: HitBox = _weapon.hitbox.instantiate()
 	hit_box.set_collision_mask_value(5,true)
 	hit_box.hit_target.connect(_on_hit_target)
-	animation_player.play("Rig_Medium_General/Throw", -1, weapon.attack_speed)
+	animation_player.play("Rig_Medium_General/Throw", -1, _weapon.attack_speed)
 	_current_melee_weapon_hitbox = hit_box
 	attack_hitbox_spawn_point.add_child(hit_box)
+
+func _ranged_attack(_weapon: RangedWeapon, mouse_pos: Vector3):
+	var projectile: Projectile = _weapon.projectile_scene.instantiate()
+	projectile.damage = _weapon.damage
+	projectile.fire(mouse_pos, _weapon.projectile_speed)
+	projectiles_node.add_child(projectile)
+	projectile.global_position = global_position
+	can_shoot = false
+	await get_tree().create_timer(_weapon.attack_speed).timeout
+	can_shoot = true
+
+func attack(mouse_pos: Vector3) -> void:
+	if _current_melee_weapon_hitbox != null:
+		return
+	if weapon is MeleeWeapon:
+		_melee_attack(weapon)
+	elif weapon is RangedWeapon and can_shoot:
+		_ranged_attack(weapon, mouse_pos)
 
 func _on_attack_animation_finished(animation_name: StringName) -> void:
 	if animation_name == "Rig_Medium_General/Throw":

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="RangedWeapon" format=3 uid="uid://djdihbq7umh45"]
+
+[ext_resource type="Script" uid="uid://d0dmmhs5o05lg" path="res://weapons/ranged_weapon.gd" id="1_05vvg"]
+[ext_resource type="ArrayMesh" uid="uid://e7t4dqbkbaau" path="res://KayKit_Adventurers_2.0_FREE/Assets/obj/staff.obj" id="1_jockq"]
+[ext_resource type="PackedScene" uid="uid://upuvoo3bd5x0" path="res://map/fire_ball.tscn" id="2_3ccij"]
+
+[resource]
+script = ExtResource("1_05vvg")
+projectile_scene = ExtResource("2_3ccij")
+projectile_speed = 10.0
+mesh = ExtResource("1_jockq")

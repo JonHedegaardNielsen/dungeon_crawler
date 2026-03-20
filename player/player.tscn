@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dan5yt6u3whot"]
 
 [ext_resource type="Script" uid="uid://df1uw7i3vr7df" path="res://player/player.gd" id="1_4flbx"]
-[ext_resource type="Resource" uid="uid://chkcklu3hre0c" path="res://weapons/axe.tres" id="2_qjkh3"]
+[ext_resource type="Resource" uid="uid://djdihbq7umh45" path="res://weapons/fire_staff.tres" id="2_g6k8r"]
 [ext_resource type="PackedScene" uid="uid://bfc2cd7q37eyx" path="res://KayKit_Adventurers_2.0_FREE/Characters/gltf/Knight.glb" id="3_g1dw6"]
 [ext_resource type="AnimationLibrary" uid="uid://chd3nt1t2l277" path="res://KayKit_Adventurers_2.0_FREE/Animations/gltf/Rig_Medium/Rig_Medium_General.glb" id="3_yw30f"]
 [ext_resource type="AnimationLibrary" uid="uid://dqfgocmv2m2wy" path="res://KayKit_Adventurers_2.0_FREE/Animations/gltf/Rig_Medium/Rig_Medium_MovementBasic.glb" id="5_qjkh3"]
@@ -15,17 +15,18 @@ point_count = 3
 radius = 0.3980713
 height = 0.7961426
 
-[node name="Player" type="CharacterBody3D" unique_id=1796071540 node_paths=PackedStringArray("_health_module", "rotating_body", "animation_player", "weapon_mesh", "attack_hitbox_spawn_point")]
+[node name="Player" type="CharacterBody3D" unique_id=1796071540 node_paths=PackedStringArray("_health_module", "rotating_body", "animation_player", "weapon_mesh", "attack_hitbox_spawn_point", "projectiles_node")]
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_4flbx")
-weapon = ExtResource("2_qjkh3")
+weapon = ExtResource("2_g6k8r")
 speed_curve = SubResource("Curve_g6k8r")
 _health_module = NodePath("BasicHealthModule")
 rotating_body = NodePath("RotatingBody")
 animation_player = NodePath("RotatingBody/Knight/AnimationPlayer")
 weapon_mesh = NodePath("RotatingBody/Knight/Rig_Medium/Skeleton3D/BoneAttachment3D/MeshInstance3D")
 attack_hitbox_spawn_point = NodePath("RotatingBody/AttackSpawnPoint")
+projectiles_node = NodePath("ProjectileNode")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2124961380]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11483216, 0.5624926, -0.09549308)
@@ -36,7 +37,7 @@ shape = SubResource("CapsuleShape3D_sh265")
 [node name="Knight" parent="RotatingBody" unique_id=557642979 instance=ExtResource("3_g1dw6")]
 transform = Transform3D(0.465, 0, 0, 0, 0.465, 0, 0, 0, 0.465, 0, 0, 0)
 
-[node name="Skeleton3D" parent="RotatingBody/Knight/Rig_Medium" parent_id_path=PackedInt32Array(557642979, 2009842182) index="0" unique_id=825416505]
+[node name="Skeleton3D" parent="RotatingBody/Knight/Rig_Medium" parent_id_path=PackedInt32Array(557642979, 1748090028) index="0" unique_id=1624479194]
 bones/1/position = Vector3(0, 0.39206383, 0)
 bones/1/rotation = Quaternion(-1.11122625e-10, 0.043157753, 2.5724098e-09, 0.9990683)
 bones/1/scale = Vector3(0.99999994, 1, 0.99999994)
@@ -77,31 +78,31 @@ bones/21/rotation = Quaternion(-0.5400721, 4.1242718e-05, 0.0009099837, 0.841618
 bones/22/rotation = Quaternion(-2.2034567e-06, 0.9202539, -0.391322, 5.6286615e-07)
 bones/22/scale = Vector3(1, 0.9999977, 1.0000024)
 
-[node name="Knight_ArmLeft" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="0" unique_id=303380620]
+[node name="Knight_ArmLeft" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="0" unique_id=1028645406]
 gi_lightmap_texel_scale = 0.01
 
-[node name="Knight_ArmRight" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="1" unique_id=66452650]
+[node name="Knight_ArmRight" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="1" unique_id=1688887531]
 gi_lightmap_texel_scale = 0.01
 
-[node name="Knight_Body" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="2" unique_id=2046555447]
+[node name="Knight_Body" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="2" unique_id=1938332908]
 gi_lightmap_texel_scale = 0.01
 
-[node name="Knight_Cape" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="3" unique_id=1593490156]
+[node name="Knight_Cape" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="3" unique_id=1703606180]
 gi_lightmap_texel_scale = 0.01
 
-[node name="Knight_Head" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="4" unique_id=32666022]
+[node name="Knight_Head" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="4" unique_id=1304783650]
 gi_lightmap_texel_scale = 0.01
 
-[node name="Knight_Helmet" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="5" unique_id=24007341]
+[node name="Knight_Helmet" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="5" unique_id=391613691]
 gi_lightmap_texel_scale = 0.01
 
-[node name="Knight_HelmetVisor" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="6" unique_id=339315191]
+[node name="Knight_HelmetVisor" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="6" unique_id=1563608359]
 gi_lightmap_texel_scale = 0.01
 
-[node name="Knight_LegLeft" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="7" unique_id=587936693]
+[node name="Knight_LegLeft" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="7" unique_id=1660922627]
 gi_lightmap_texel_scale = 0.01
 
-[node name="Knight_LegRight" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="8" unique_id=1024086062]
+[node name="Knight_LegRight" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="8" unique_id=1407655863]
 gi_lightmap_texel_scale = 0.01
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="9" unique_id=335667010]
@@ -136,6 +137,8 @@ metadata/_custom_type_script = "uid://rjtrxpfvr7gx"
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=888416578]
 transform = Transform3D(-1, -5.5607725e-08, 6.745756e-08, 0, 0.77162457, 0.63607824, -8.742278e-08, 0.63607824, -0.77162457, 3.3881454e-07, 4.832748, -3.8755865)
+
+[node name="ProjectileNode" type="Node" parent="." unique_id=922936452]
 
 [connection signal="death" from="BasicHealthModule" to="." method="_die"]
 

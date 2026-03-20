@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://upuvoo3bd5x0"]
+
+[ext_resource type="Script" uid="uid://cp0nrdyqw3546" path="res://projectile.gd" id="1_ox0yh"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4ct1o"]
+radius = 0.27875397
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ox0yh"]
+
+[node name="FireBall" type="CharacterBody3D" unique_id=363071045]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_ox0yh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1412744691]
+shape = SubResource("SphereShape3D_4ct1o")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=2000098480]
+light_color = Color(1, 0.50980395, 0.3882353, 1)
+light_energy = 3.059
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1838609328]
+collision_layer = 0
+collision_mask = 20
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=889001071]
+shape = SubResource("SphereShape3D_ox0yh")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_hit"]
