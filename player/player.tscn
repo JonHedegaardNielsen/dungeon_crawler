@@ -37,7 +37,7 @@ shape = SubResource("CapsuleShape3D_sh265")
 [node name="Knight" parent="RotatingBody" unique_id=557642979 instance=ExtResource("3_g1dw6")]
 transform = Transform3D(0.465, 0, 0, 0, 0.465, 0, 0, 0, 0.465, 0, 0, 0)
 
-[node name="Skeleton3D" parent="RotatingBody/Knight/Rig_Medium" parent_id_path=PackedInt32Array(557642979, 1748090028) index="0" unique_id=1624479194]
+[node name="Skeleton3D" parent="RotatingBody/Knight/Rig_Medium" parent_id_path=PackedInt32Array(557642979, 2009842182) index="0" unique_id=825416505]
 bones/1/position = Vector3(0, 0.39206383, 0)
 bones/1/rotation = Quaternion(-1.11122625e-10, 0.043157753, 2.5724098e-09, 0.9990683)
 bones/1/scale = Vector3(0.99999994, 1, 0.99999994)
@@ -78,31 +78,31 @@ bones/21/rotation = Quaternion(-0.5400721, 4.1242718e-05, 0.0009099837, 0.841618
 bones/22/rotation = Quaternion(-2.2034567e-06, 0.9202539, -0.391322, 5.6286615e-07)
 bones/22/scale = Vector3(1, 0.9999977, 1.0000024)
 
-[node name="Knight_ArmLeft" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="0" unique_id=1028645406]
+[node name="Knight_ArmLeft" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="0" unique_id=303380620]
 gi_lightmap_texel_scale = 0.01
 
-[node name="Knight_ArmRight" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="1" unique_id=1688887531]
+[node name="Knight_ArmRight" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="1" unique_id=66452650]
 gi_lightmap_texel_scale = 0.01
 
-[node name="Knight_Body" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="2" unique_id=1938332908]
+[node name="Knight_Body" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="2" unique_id=2046555447]
 gi_lightmap_texel_scale = 0.01
 
-[node name="Knight_Cape" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="3" unique_id=1703606180]
+[node name="Knight_Cape" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="3" unique_id=1593490156]
 gi_lightmap_texel_scale = 0.01
 
-[node name="Knight_Head" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="4" unique_id=1304783650]
+[node name="Knight_Head" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="4" unique_id=32666022]
 gi_lightmap_texel_scale = 0.01
 
-[node name="Knight_Helmet" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="5" unique_id=391613691]
+[node name="Knight_Helmet" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="5" unique_id=24007341]
 gi_lightmap_texel_scale = 0.01
 
-[node name="Knight_HelmetVisor" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="6" unique_id=1563608359]
+[node name="Knight_HelmetVisor" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="6" unique_id=339315191]
 gi_lightmap_texel_scale = 0.01
 
-[node name="Knight_LegLeft" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="7" unique_id=1660922627]
+[node name="Knight_LegLeft" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="7" unique_id=587936693]
 gi_lightmap_texel_scale = 0.01
 
-[node name="Knight_LegRight" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="8" unique_id=1407655863]
+[node name="Knight_LegRight" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="8" unique_id=1024086062]
 gi_lightmap_texel_scale = 0.01
 
 [node name="BoneAttachment3D" type="BoneAttachment3D" parent="RotatingBody/Knight/Rig_Medium/Skeleton3D" index="9" unique_id=335667010]

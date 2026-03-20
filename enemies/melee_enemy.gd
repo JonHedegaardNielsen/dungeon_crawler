@@ -60,7 +60,7 @@ func _on_attack_animation_finished(animation_name: String) -> void:
 	if animation_name == "Rig_Medium_General/Throw" and _current_attack_hitbox != null:
 		_current_attack_hitbox.queue_free()
 		_current_attack_hitbox = null
-		_is_attacking = true
+		_is_attacking = false
 
 func _target_hit(body: Player) -> void:
 	if body != null:

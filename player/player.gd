@@ -19,7 +19,7 @@ var _camera: Camera3D
 @export var orbit_radius: float = 5.0
 @export var weapon_mesh: MeshInstance3D
 @export var attack_hitbox_spawn_point: Node3D
-
+var is_attacking: bool = false
 @export var projectiles_node: Node
 
 var can_shoot := true
@@ -41,13 +41,13 @@ func handle_movement(delta: float) -> void:
 		var mult = speed_curve.sample(time_ran)
 		velocity.x = direction.x * SPEED * mult
 		velocity.z = direction.z * SPEED * mult
-		if not animation_player.is_playing():
+		if not is_attacking:
 			animation_player.play("Rig_Medium_MovementBasic/Walking_A")
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 		time_ran = 0.0
-		if not animation_player.is_playing():
+		if not is_attacking:
 			animation_player.play("Rig_Medium_General/Idle_A")
 	move_and_slide()
 
@@ -57,7 +57,6 @@ func _rotate_camera(direction: float, delta: float) -> void:
 	var target_position := global_position
 	target_position.y = _camera.global_position.y
 	_camera.global_position = target_position + offset
-	var old_y_direction := _camera.rotation.x
 	var position_to_look_at := global_position
 	position_to_look_at.y += 2
 	_camera.look_at(position_to_look_at, Vector3.UP)
@@ -116,6 +115,7 @@ func get_mouse_ray_hit() -> Dictionary:
 	return space_state.intersect_ray(query)
 
 func _melee_attack(_weapon: MeleeWeapon):
+	is_attacking = true
 	var hit_box: HitBox = _weapon.hitbox.instantiate()
 	hit_box.set_collision_mask_value(5,true)
 	hit_box.hit_target.connect(_on_hit_target)
@@ -146,6 +146,7 @@ func _on_attack_animation_finished(animation_name: StringName) -> void:
 		if _current_melee_weapon_hitbox != null:
 			_current_melee_weapon_hitbox.queue_free()
 			_current_melee_weapon_hitbox = null
+			is_attacking = false
 
 func _on_hit_target(body: PhysicsBody3D) -> void:
 	if body is MeleeEnemy:
